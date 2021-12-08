@@ -1,0 +1,79 @@
+mixin edit-link(file, edit)
+  - var file = file;
+  - var website_repo = 'https://github.com/nolimits4web/swiper-website'
+  - var sub = edit ? 'edit' : 'tree'
+  a.edit-link(href=`${website_repo}/${sub}/master/src/jade/${file}`, target="_blank") Improve this Doc
+block vars
+doctype
+html
+  head
+    meta(charset="utf-8")
+    title=title
+    meta(property="og:title" content=title)
+    meta(property="og:image", content="https://swiperjs.com/i/share-banner.png")
+    meta(property="og:site_name", content="Swiper")
+    meta(name="twitter:card", content="summary_large_image")
+    meta(name="twitter:site", content="@nolimits4web")
+    meta(name="twitter:creator", content="@nolimits4web")
+    meta(name="twitter:title", content=title)
+    meta(name="twitter:description", content="Most Modern Mobile Touch Slider")
+    meta(name="twitter:image", content="https://swiperjs.com/i/share-banner.png")
+    link(rel="stylesheet", href="/package/css/swiper.min.css")
+    link(rel="stylesheet", href="/css/main.css")
+    link(rel="shortcut icon" href="/i/favicon.png")
+  body
+    header.inner-header
+      .center
+        .carbon
+          <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?zoneid=1673&serve=C6AILKT&placement=idangerousswiper" id="_carbonads_js"></script>
+        a(href="/").logo
+        .title-links
+          .title Swiper
+          .subtitle Most Modern Mobile Touch Slider
+          .links-row
+            .links
+              - if (activeLink == 'get-started')
+                a(href="/get-started/").active Get Started
+              - else
+                a(href="/get-started/") Get Started
+
+              - if (activeLink == 'api')
+                a(href="/api/").active API
+              - else
+                a(href="/api/") API
+
+              - if (activeLink == 'demos')
+                a(href="/demos/").active Demos
+              - else
+                a(href="/demos/") Demos
+          .github-buttons
+            a(href="https://github.com/nolimits4web/swiper", target="_blank")
+              i
+            a(href="https://github.com/nolimits4web/swiper", target="_blank").gh-stars
+              span
+              |  stars
+            a(href="https://github.com/nolimits4web/swiper", target="_blank").gh-forks
+              span
+              |  forks
+        .clearfix
+
+    .content(class=noCenterContent ? '' : 'center', class=withLeftNav ? 'with-left-nav' : '')
+      block content
+
+    footer
+      .center
+        .sponsors-links
+          span Supported by:
+          a(href="https://www.colognewebdesign.de" target="_blank" title="COLOGNE WEBDESIGN") COLOGNE WEBDESIGN
+        .sponsors
+          div(id="bsap_1306029", class="bsarocks bsap_e6fd620d82f1992c9d89ddb5878f795b")
+        .links
+          a(href="/") Swiper
+          a(href="/get-started/") Get Started
+          a(href="/api/") API
+          a(href="/demos/") Demos
+        .copy #{new Date().getFullYear()} © Swiper by <a href="https://twitter.com/nolimits4web">Vladimir Kharlampidi</a>
+
+    script(src="/package/js/swiper.min.js")
+    script(src="/js/main.js")
+
