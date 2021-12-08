@@ -2,7 +2,7 @@
 
 Swiper's website to use these docs offline
 
-https://swiperjs.com/
+https://swiper5.flandre.tw/
 
 ## Gulp
 
