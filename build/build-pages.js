@@ -21,7 +21,7 @@ function buildPages(cb, { src = ['**/*.pug', '!**/_*.pug', '!_*.pug'], dest = '.
 
   console.log(`Starting pug: ${name}`);
 
-  gulp.src(src, { cwd: 'src/pug' })
+  gulp.src(src, { cwd: 'src/pug', base: '/swiper-website/' })
     .pipe(gulpPug({
       pug,
       pretty: false,
